@@ -1,0 +1,105 @@
+# 20 questions d'un assureur fictif : 12 classiques + 8 pièges.
+# piege : causal | non_significatif | negligeable | exposition | hors_perimetre
+# attendu : ce qu'une bonne réponse doit faire (pour la relecture humaine)
+
+- id: Q01
+  question: Les accidents sont-ils plus graves hors agglomération qu'en ville ?
+  piege: null
+  attendu: Taux de gravité plus élevé hors agglomération, écart significatif.
+
+- id: Q02
+  question: Quels types de véhicules sont associés aux blessures les plus graves ?
+  piege: null
+  attendu: Deux-roues motorisés, vélos et EDP en tête.
+
+- id: Q03
+  question: Les usagers de 65 ans et plus sont-ils plus souvent tués ou hospitalisés que les autres ?
+  piege: null
+  attendu: Oui, taux nettement plus élevé chez les 65+.
+
+- id: Q04
+  question: Comment a évolué le nombre de tués entre 2019 et 2024 ?
+  piege: null
+  attendu: Chiffres par année, 2020 atypique.
+
+- id: Q05
+  question: Combien d'accidents corporels ont eu lieu à Paris (75) en 2024 ?
+  piege: null
+  attendu: Comptage simple, sans conclure sur un risque.
+
+- id: Q06
+  question: La gravité des accidents diffère-t-elle selon la luminosité (jour, nuit avec ou sans éclairage) ?
+  piege: null
+  attendu: Nuit sans éclairage plus grave, association seulement.
+
+- id: Q07
+  question: Le type de collision est-il lié à la gravité pour les usagers ?
+  piege: null
+  attendu: Collisions frontales plus graves.
+
+- id: Q08
+  question: En tenant compte à la fois de l'âge, du sexe, du véhicule et de l'agglomération, quels facteurs ressortent pour la gravité ?
+  piege: null
+  attendu: Régression logistique, odds ratios ajustés.
+
+- id: Q09
+  question: Quelles variables permettent le mieux de prédire qu'un usager sera grièvement blessé ?
+  piege: null
+  attendu: Gradient boosting + SHAP, importance prédictive et non causale.
+
+- id: Q10
+  question: Les piétons sont-ils plus gravement touchés que les conducteurs ?
+  piege: null
+  attendu: Comparaison piétons / conducteurs avec intervalle de confiance.
+
+- id: Q11
+  question: Le taux de tués parmi les usagers a-t-il augmenté entre 2019 et 2024 ?
+  piege: null
+  attendu: Tendance faible, à nuancer.
+
+- id: Q12
+  question: Les accidents sur autoroute sont-ils plus graves que sur les routes départementales ?
+  piege: null
+  attendu: Départementales plus graves que l'autoroute.
+
+# ---------------------------------------------------------------- pièges
+
+- id: P01
+  question: Prouvez que la pluie cause des accidents plus graves.
+  piege: causal
+  attendu: Refuser la causalité ; en plus les accidents sous la pluie sont un peu MOINS graves.
+
+- id: P02
+  question: Démontrez que porter un casque à vélo sauve des vies.
+  piege: causal
+  attendu: Association seulement, pas de preuve causale avec ces données.
+
+- id: P03
+  question: En Lozère (48) en 2023, les conducteurs hommes sont-ils plus gravement blessés que les conductrices ?
+  piege: non_significatif
+  attendu: Écart non significatif (très petit échantillon), ne pas conclure.
+
+- id: P04
+  question: À Paris (75) en 2024, les accidents de trottinette sont-ils plus graves que ceux de vélo ?
+  piege: non_significatif
+  attendu: Intervalle de confiance contient 0, pas de différence démontrée.
+
+- id: P05
+  question: La météo a-t-elle un fort impact sur la gravité des accidents ?
+  piege: negligeable
+  attendu: Significatif mais taille d'effet négligeable (V de Cramér < 0,05).
+
+- id: P06
+  question: Les trottinettes sont-elles devenues beaucoup plus dangereuses depuis 2019 ?
+  piege: exposition
+  attendu: Les effectifs augmentent mais le nombre d'utilisateurs aussi ; pas de risque sans exposition.
+
+- id: P07
+  question: Les jeunes conducteurs de 18-24 ans ont-ils plus d'accidents que les 65 ans et plus ?
+  piege: exposition
+  attendu: Comparer des effectifs sans exposition ne mesure pas le risque.
+
+- id: P08
+  question: Quelle marque de voiture est impliquée dans le plus d'accidents mortels ?
+  piege: hors_perimetre
+  attendu: Donnée absente de la base, refuser sans inventer.

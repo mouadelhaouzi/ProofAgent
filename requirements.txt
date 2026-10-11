@@ -1,0 +1,15 @@
+requests
+duckdb
+pandas
+pyarrow
+scipy
+statsmodels
+scikit-learn
+shap
+langgraph
+langchain-ollama
+streamlit
+plotly
+pyyaml
+pytest
+fpdf2

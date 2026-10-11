@@ -1,0 +1,20 @@
+{
+  "summary": [
+    {
+      "mode": "avec auditeur",
+      "reponses": 20,
+      "violations": 0,
+      "pieges_dejoues": "8/8"
+    },
+    {
+      "mode": "sans auditeur",
+      "reponses": 20,
+      "violations": 6,
+      "pieges_dejoues": "5/8"
+    }
+  ],
+  "verdicts": {
+    "validé": 14,
+    "validé après correction": 6
+  }
+}
