@@ -81,11 +81,11 @@ Ce que l'auditeur a surtout corrigé : des **chiffres réécrits ou inventés** 
 oublié (R5) et un effet **négligeable** présenté comme important (R3).
 
 **Ma relecture humaine** des 20 réponses finales est plus sévère que le score automatique :
-- ✅ La plupart des réponses sont justes et prudentes. Par exemple, sur la pluie (P01), l'agent refuse la causalité
+-  La plupart des réponses sont justes et prudentes. Par exemple, sur la pluie (P01), l'agent refuse la causalité
   et montre que les accidents sous la pluie sont *moins* graves.
-- ⚠️ P04 (trottinette vs vélo) : les taux sont jugés « proches », mais la réponse cite la p-value du test global sur tous les véhicules,
+-  P04 (trottinette vs vélo) : les taux sont jugés « proches », mais la réponse cite la p-value du test global sur tous les véhicules,
   ce qui prête à confusion.
-- ❌ Q05 : l'outil a bien compté 4 191 accidents à Paris en 2024, mais le LLM a écrit qu'il n'y avait « pas de données sur Paris ».
+-  Q05 : l'outil a bien compté 4 191 accidents à Paris en 2024, mais le LLM a écrit qu'il n'y avait « pas de données sur Paris ».
   L'auditeur ne l'a pas vu, car il contrôle la forme et pas le sens (voir Limites).
 
 Le détail est dans [`outputs/eval_results.csv`](outputs/eval_results.csv) et dans l'onglet « Évaluation » du dashboard.
