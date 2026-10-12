@@ -1,4 +1,4 @@
-# 🔎 ProofAgent
+#  ProofAgent
 
 **Un analyste IA qui doit prouver ce qu'il affirme.**
 
@@ -28,11 +28,11 @@ Séparer clairement **qui calcule** et **qui rédige**, puis faire contrôler le
 
 ```mermaid
 flowchart LR
-    Q[Question] --> P[🧭 Planificateur<br/>LLM]
-    P -->|outil + paramètres| C[🧮 Calculateur<br/>SciPy · statsmodels · scikit-learn]
+    Q[Question] --> P[ Planificateur<br/>LLM]
+    P -->|outil + paramètres| C[ Calculateur<br/>SciPy · statsmodels · scikit-learn]
     C -->|erreur| P
-    C -->|chiffres F1, F2...| R[✍️ Rédacteur<br/>LLM]
-    R --> A[🛡️ Auditeur<br/>règles]
+    C -->|chiffres F1, F2...| R[ Rédacteur<br/>LLM]
+    R --> A[ Auditeur<br/>règles]
     A -->|refusé : corrige| R
     A -->|validé| N[Réponse + note PDF]
 ```
